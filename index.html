@@ -8,6 +8,7 @@
 <title>Grok Bot</title>
 <link rel="stylesheet" href="app.css">
 <link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 </head>
 <body>
 <header class="navbar">
@@ -16,6 +17,7 @@
   <span class="paper-badge">PAPER</span>
   <button class="bell" aria-label="Notifications">🔔<span class="dot"></span></button>
 </header>
+<div id="desk-error" class="error-row" hidden>Desk offline · retrying in <span id="retry-s">15</span>s · last update <span id="last-update">—</span></div>
 
 <main>
   <section id="home" class="screen active">
@@ -28,7 +30,7 @@
     <canvas id="chart" height="180"></canvas>
     <div class="card live-screen">
       <div class="live-head"><span class="live-dot"></span><span>Live · Bot's computer</span><span class="lane">Idle</span></div>
-      <div class="frame">Waiting for the first frame</div>
+      <div class="frame"><span id="frame-text">Waiting for the first frame</span><img id="screen-frame" alt="" hidden></div>
       <div class="last-order">No orders yet tonight</div>
     </div>
     <div class="card"><h2>Bots · 5 running</h2><p class="muted">Scanner · Analyst · Brain · Executor · Risk — skeleton, not running yet.</p></div>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Grok Bot</title>
+<link rel="stylesheet" href="app.css">
+<link rel="manifest" href="manifest.json">
+</head>
+<body>
+<header class="navbar">
+  <button class="avatar" aria-label="Account">B</button>
+  <span class="title">Grok Bot</span>
+  <span class="paper-badge">PAPER</span>
+  <button class="bell" aria-label="Notifications">🔔<span class="dot"></span></button>
+</header>
+
+<main>
+  <section id="home" class="screen active">
+    <div class="balance-block">
+      <div class="balance-label">Balance</div>
+      <div class="balance"><span class="currency">$</span><span id="balance">36.00</span></div>
+      <div class="today"><span id="today-pct">+0.00%</span> today <span class="mult" id="mult">1.00x</span></div>
+      <p class="hint">PAPER — simulated cash. Real FOMO cash ($9.05) is separate.</p>
+    </div>
+    <canvas id="chart" height="180"></canvas>
+    <div class="card live-screen">
+      <div class="live-head"><span class="live-dot"></span><span>Live · Bot's computer</span><span class="lane">Idle</span></div>
+      <div class="frame">Waiting for the first frame</div>
+      <div class="last-order">No orders yet tonight</div>
+    </div>
+    <div class="card"><h2>Bots · 5 running</h2><p class="muted">Scanner · Analyst · Brain · Executor · Risk — skeleton, not running yet.</p></div>
+    <div class="card"><h2>Activity · See all</h2><p class="muted">Nothing yet tonight.</p></div>
+  </section>
+
+  <section id="bots" class="screen">
+    <h1>Bots</h1>
+    <div class="bot-card" data-bot="scanner"><span class="dot" style="background:#64d2ff"></span> Scanner <span class="muted">— 0 pools</span></div>
+    <div class="bot-card" data-bot="analyst"><span class="dot" style="background:#ffd60a"></span> Analyst <span class="muted">— 0 taken apart</span></div>
+    <div class="bot-card" data-bot="brain"><span class="dot" style="background:#bf5af2"></span> Brain <span class="muted">— Sizing</span></div>
+    <div class="bot-card" data-bot="executor"><span class="dot" style="background:#00d35a"></span> Executor <span class="muted">— 0 trades</span></div>
+    <div class="bot-card" data-bot="risk"><span class="dot" style="background:#ff6b9a"></span> Risk <span class="muted">— Guarding</span></div>
+  </section>
+
+  <section id="activity" class="screen">
+    <h1>Activity</h1>
+    <p class="muted">Nothing yet tonight.</p>
+  </section>
+
+  <section id="account" class="screen">
+    <h1>Account</h1>
+    <p><strong>Mode:</strong> PAPER <span class="paper-badge">PAPER</span></p>
+    <p><strong>FOMO:</strong> BeamerMoe21</p>
+    <p><strong>Simulated cash:</strong> $36.00</p>
+    <p><strong>Real FOMO cash:</strong> $9.05 USDC (separate — PAPER never spends it)</p>
+    <p class="muted">Settings (Step 12) load here once the live process runs. LIVE requires typing LIVE, 1 full PAPER night, and Step 15 passed.</p>
+  </section>
+</main>
+
+<nav class="tabbar">
+  <button data-tab="home" class="active">Home</button>
+  <button data-tab="bots">Bots</button>
+  <button data-tab="activity">Activity</button>
+  <button data-tab="account">Account</button>
+</nav>
+<script src="chart.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
